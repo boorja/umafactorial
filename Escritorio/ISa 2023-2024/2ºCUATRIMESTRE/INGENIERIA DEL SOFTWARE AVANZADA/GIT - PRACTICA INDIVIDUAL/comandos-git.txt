@@ -1,0 +1,105 @@
+ITEM 1
+Tras crear el nuevo repositorio en la mi cuenta de github se clona en el ordenador.
+    git clone https://github.com/boorja/umafactorial.git
+
+ITEM 3
+Hemos creado un fichero nuevo en el que hemos escrito codigo y ahora debemos de agregar este archivo mediante un commit con un mensaje que nos servira para poder identificarlo.
+    git add factorial.java
+    git commit -m "implementacion inicial"
+
+ITEM 4
+Realizamos unos cambios en el archivo y debemos de volver a agregar el archivo con dichas modificaciones.
+Tambien debemos de agregarlo con un mensaje identificatorio.
+    git add factorial.java
+    git commit -m "refactorizacion"
+
+ITEM 5
+Debemos de enviar los cambios que hemos realizado en local al repositorio en GitHub y para esto primero definimos el origin mediante:
+    git remote add origin https://github.com/boorja/umafactorial.git
+Tras realizar esto ahora si, enviamos los cambios de la rama master.
+    git push origin master
+Ahora creamos una nueva rama y nos movemos a esta misma.
+    git checkout -b recursivo
+
+ITEM 7
+Modificamos el archivo y como anteriormente lo agregamos con un mensaje identificatorio.
+    git add factorial.java
+    git commit -m "implementacion recursiva"
+Subimos esta rama al repositorio.
+    git push origin recursivo
+
+ITEM 8
+Volvemos a la rama master.
+	git checkout master
+
+ITEM 10
+Hemos vuelto a modificar el archivo y ahora tenemos que una vez mas agregar el cambio con un mensaje identificatorio.
+	git add factorial.java
+	git commit -m "correccion numeros negativos"
+Actualizamos el repositorio de GitHub.
+	git push origin master
+
+ITEM 11
+Volvemos a la rama recursivo.
+	git checkout recursivo
+Volvemos a modificar el archivo y agregamos esta modificacion al registro.
+	git add factorial.java
+	git commit -m "optimizacion"
+
+ITEM 12
+Volvemos a la rama master.
+	git checkout master
+Mezclamos los cambios de la rama recursivo con la actual.
+	git merge recursivo
+
+ITEM 13
+Creamos una nueva rama llamada refacIO y nos movemos a esta.
+	git checkout -b refacIO
+
+ITEM 14
+Hemos modificado el archivo y registramos este cambio con un commit.
+	git add factorial.java
+	git commit -m "refactorizacion de metodo de entrada"
+
+ITEM 15
+Hemos vuelto a cambiar el archivo pero antes de registrarlo debemos de ocuparnos de otra cosa, así que guardamos temporalmente el estado en el stash.
+	git stash
+Volvemos a la rama master.
+	git checkout master
+
+ITEM 16
+Realizamos una nueva modificacion aquí y registramos con un commit.
+	git add factorial.java
+	git commit -m "cambio de long a BigInteger"
+Actualizamos el repositorio de GitHub.
+	git push origin master
+Volvemos a la rama refacIO.
+	git checkout refacIO
+Una vez aqui recuperamos lo que guardamos en el stash.
+	git stash pop
+Por ultimo guardamos el ultimo registro con un commit.
+	git add factorial.java
+	git commit -m "refactorizacion de metodo de salida"
+
+ITEM 17
+Cambiamos a la rama master.
+	git checkout master
+Mezclamos los cambios de refacIO.
+	git merge refacIO
+Este comando ha fallado, pero era lo esperado.
+
+ITEM 19
+Modificamos el fichero una vez mas y registramos con commit.
+	git add factorial.java
+	git commit -m "mezcla de rama refacIO"
+Enviamos los cambios al repositorio de GitHub.
+	git push origin master
+
+ITEM 21
+Hemos creado un nuevo archivo y lo registramos con un commit.
+	git add comandos-git.txt
+	git commit -m "adicion de historial de linea de comandos"
+
+ITEM 22
+Sincronizamos todas las ramas con el repositorio de GitHub.
+	git push --all origin
